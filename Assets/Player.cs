@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField]private float moveSpeed;
     [SerializeField] private float jumpForce;
     private bool runBegun;
+    private bool IsRunning;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AnimatorController();
+
         if (runBegun)
         {
             Debug.Log("Running.....");
@@ -35,6 +38,12 @@ public class Player : MonoBehaviour
 
         CheckCollission();
         checkInput();
+    }
+
+    private void AnimatorController()
+    {
+        IsRunning = rb.linearVelocity.x != 0;
+        anim.SetBool("isRunning", IsRunning);
     }
 
     private void CheckCollission()
