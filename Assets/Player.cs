@@ -3,15 +3,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Move Infor")]
-    public float moveSpeed;
-    public float jumpForce;
+    [SerializeField]private float moveSpeed;
+    [SerializeField] private float jumpForce;
     private bool runBegun;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private Animator anim;
 
     [Header("Collission Infor")]
-    public float groundCheckDistance;
-    public LayerMask groundMask;
+    [SerializeField] private float groundCheckDistance;
+    [SerializeField] private LayerMask groundMask;
     private bool isGrounded;
 
 
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         Debug.Log("Starting.....");
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
