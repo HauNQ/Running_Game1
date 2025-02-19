@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             Debug.Log("I am jumping "+jumpForce);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
