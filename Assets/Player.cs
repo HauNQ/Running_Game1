@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         AnimatorController();
+       
 
         if (runBegun)
         {
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
     {
         IsRunning = rb.linearVelocity.x != 0;
         anim.SetBool("isRunning", IsRunning);
+        anim.SetBool("isGrounded", isGrounded);
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
     private void CheckCollission()
