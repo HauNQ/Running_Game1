@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("I am jumping " + jumpForce);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            AudioManager2.instance.PlaySFX(Random.Range(0,1));
         }
     }
 
