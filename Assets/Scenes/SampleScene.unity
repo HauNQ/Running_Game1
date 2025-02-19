@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 1573122893}
   - component: {fileID: 1573122892}
   - component: {fileID: 1573122891}
+  - component: {fileID: 1573122895}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -509,7 +510,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1573122893
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -580,6 +581,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573122895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573122890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70aae028074ebd4d9cbd2e828bca158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.26
+  jumpForce: 1.2
+  rb: {fileID: 1573122892}
+  Transform: {fileID: 0}
 --- !u!1 &1843512045
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +694,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843512045}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
