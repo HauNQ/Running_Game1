@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
     [SerializeField]private float moveSpeed;
     [SerializeField] private float jumpForce;
     private bool runBegun;
-    private bool IsRunning;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -43,9 +42,8 @@ public class Player : MonoBehaviour
 
     private void AnimatorController()
     {
-        IsRunning = rb.linearVelocity.x != 0;
-        anim.SetBool("isRunning", IsRunning);
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetFloat("xVelocity", rb.linearVelocity.x);
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
